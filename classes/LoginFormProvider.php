@@ -1,35 +1,19 @@
 <?php
 
-class RegisterationFormProvider{
+class LoginFormProvider{
 
-  function createRegisterationForm(){
-    $username = $this->createUsernameInput();
+  function createLoginForm(){
     $email = $this->createEmailInput();
     $password = $this->createPasswordInput();
-    $password2 = $this->createConfirmPasswordInput();
-    $registerButton = $this->createSubmitButton();
+    $loginButton = $this->createLoginButton();
 
     return "<form class="auth-form" action="">
-      $username
       $email
       $password
-      $password2
-      $registerButton 
+      $loginButton
     </form>";
   }
 
-
-  function createUsernameInput(){
-    return "<div class="form-group">
-            <label for="username">Username</label>
-            <input
-              type="text"
-              name="username"
-              class="form-control"
-              placeholder="Username"
-            />
-          </div>";
-  }
 
   function createEmailInput(){
     return "<div class="form-group">
@@ -55,28 +39,17 @@ class RegisterationFormProvider{
           </div>";
   }
 
-  function createConfirmPasswordInput(){
-    return "<div class="form-group">
-            <label for="username">Confirm Password</label>
-            <input
-              type="password"
-              name="password2"
-              class="form-control"
-              placeholder="Confirm Your Password"
-            />
-          </div>
-    ";
-  }
 
-  function createSubmitButton(){
+
+  function createLoginButton(){
     return "<div class="form-group">
             <button
               id="auth-button"
               class="btn form-control"
               type="submit"
-              name="register"
+              name="login"
             >
-              Register
+              Login
             </button>
           </div>
     ";

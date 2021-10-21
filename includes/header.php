@@ -71,3 +71,5 @@
       <!-- /.navbar-collapse -->
     </div>
   </nav>
+
+  <?php require_once 'init.php'; ?>
