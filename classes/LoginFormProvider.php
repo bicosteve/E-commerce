@@ -2,7 +2,7 @@
 
 class LoginFormProvider{
 
-  function createLoginForm(){
+  public function createLoginForm(){
     $email = $this->createEmailInput();
     $password = $this->createPasswordInput();
     $loginButton = $this->createLoginButton();
@@ -15,7 +15,7 @@ class LoginFormProvider{
   }
 
 
-  function createEmailInput(){
+  private function createEmailInput(){
     return '<div class="form-group">
             <label for="email">Email</label>
             <input
@@ -27,7 +27,7 @@ class LoginFormProvider{
           </div>';
   }
 
-  function createPasswordInput(){
+  private function createPasswordInput(){
     return '<div class="form-group">
             <label for="password">Password</label>
             <input
@@ -40,8 +40,7 @@ class LoginFormProvider{
   }
 
 
-
-  function createLoginButton(){
+  private function createLoginButton(){
     return '<div class="form-group">
             <button
               id="auth-button"

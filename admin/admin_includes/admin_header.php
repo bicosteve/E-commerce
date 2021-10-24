@@ -99,15 +99,10 @@
                 <i class="glyphicon glyphicon-log-in"></i> Login
               </a>
             </li>
-            <li class="active">
-              <a href="register.php">
-                <i class="glyphicon glyphicon-plus-sign"></i> Register
-              </a>
-            </li>
           </ul>
         </div>
         <!-- /.navbar-collapse -->
       </div>
     </nav>
 
-    <?php require_once '../../init.php'; ?>
+    <?php require_once '../init.php'; ?>

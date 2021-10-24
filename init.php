@@ -6,4 +6,5 @@
     require_once('classes/Database.php');
     require_once('classes/RegisterationFormProvider.php');
     require_once('classes/LoginFormProvider.php');
+    require_once('classes/AddProductFormProvider.php');
   });
