@@ -2,37 +2,37 @@
 
 class RegisterationFormProvider{
 
-  function createRegisterationForm(){
+  public function createRegisterationForm(){
     $username = $this->createUsernameInput();
     $email = $this->createEmailInput();
     $password = $this->createPasswordInput();
     $password2 = $this->createConfirmPasswordInput();
     $registerButton = $this->createSubmitButton();
 
-    return "<form class="auth-form" action="">
-      $username
-      $email
-      $password
-      $password2
-      $registerButton 
+    return "<form class='auth-form' action='#'>
+        $username
+        $email
+        $password
+        $password2
+        $registerButton
     </form>";
   }
 
 
-  function createUsernameInput(){
-    return "<div class="form-group">
-            <label for="username">Username</label>
+  private function createUsernameInput(){
+    return "<div class='form-group'>
+            <label for='username'>Username</label>
             <input
-              type="text"
-              name="username"
-              class="form-control"
-              placeholder="Username"
+              type='text'
+              name='username'
+              class='form-control'
+              placeholder='Username'
             />
           </div>";
   }
 
-  function createEmailInput(){
-    return "<div class="form-group">
+  private function createEmailInput(){
+    return '<div class="form-group">
             <label for="email">Email</label>
             <input
               type="email"
@@ -40,11 +40,11 @@ class RegisterationFormProvider{
               class="form-control"
               placeholder="Your Email"
             />
-          </div>";
+          </div>';
   }
 
-  function createPasswordInput(){
-    return "<div class="form-group">
+  private function createPasswordInput(){
+    return '<div class="form-group">
             <label for="password">Password</label>
             <input
               type="password"
@@ -52,11 +52,11 @@ class RegisterationFormProvider{
               class="form-control"
               placeholder="Enter Your Password"
             />
-          </div>";
+          </div>';
   }
 
-  function createConfirmPasswordInput(){
-    return "<div class="form-group">
+  private function createConfirmPasswordInput(){
+    return '<div class="form-group">
             <label for="username">Confirm Password</label>
             <input
               type="password"
@@ -65,11 +65,11 @@ class RegisterationFormProvider{
               placeholder="Confirm Your Password"
             />
           </div>
-    ";
+    ';
   }
 
-  function createSubmitButton(){
-    return "<div class="form-group">
+  private function createSubmitButton(){
+    return '<div class="form-group">
             <button
               id="auth-button"
               class="btn form-control"
@@ -79,7 +79,7 @@ class RegisterationFormProvider{
               Register
             </button>
           </div>
-    ";
+    ';
   }
 
 }

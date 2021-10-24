@@ -17,7 +17,7 @@ class Database {
   PDO::ATTR_EMULATE_PREPARES=>false
   ];
 
-  function __construct
+  function __construct()
   {
     $dsn = "mysql:host=$this->db_host;dbname=$this->db_name";
     try{
