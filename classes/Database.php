@@ -19,7 +19,8 @@ class Database {
 
   function __construct()
   {
-    $dsn = "mysql:host=$this->db_host;dbname=$this->db_name";
+    $dsn = "mysql:host=$this->host;dbname=$this->dbname";
+    
     try{
       $this->connection = new PDO($dsn,$this->username,$this->password,$this->options);
       $this->db_connection = true;

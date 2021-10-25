@@ -2,10 +2,36 @@
     <div class="container" id="page">
       <div class="auth">
         <p>Login</p>
-        <?php
-          $loginForm = new LoginFormProvider();
-          echo $loginForm->createLoginForm();
-        ?>
+        <form class="auth-form" action="">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              class="form-control"
+              placeholder="Your Email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              class="form-control"
+              placeholder="Enter Your Password"
+            />
+          </div>
+          <div class="form-group">
+            <button
+              id="auth-button"
+              class="btn form-control"
+              type="submit"
+              name="login"
+            >
+              Login
+            </button>
+          </div>
+        </form>
       </div>
       <?php require_once 'includes/footer_date.php'; ?>
     </div>
