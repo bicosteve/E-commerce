@@ -1,5 +1,6 @@
 <?php
   require_once 'includes/header.php';
+  
 
   class Account{
     private $db;
@@ -16,6 +17,53 @@
       $this->validatePassword($password);
       $this->validateConfirmPassword($password2);
       $this->validateComparePasswords($password,$password2);
+
+      if(empty($this->errorArray)){
+        try{
+          $hashed_password = password_hash($password,PASSWORD_DEFAULT);
+          $stmt = $this->db->connection->prepare('INSERT INTO users() VALUES (?,?,?)');
+          return $stmt->execute([$username,$email,$hashed_password]);
+        } catch(PDOException $er){
+          echo $er->getMessage();
+          return false;
+        }
+      }
+    }
+
+    public function login($email,$password){
+      $isAuthenticated = false;
+      
+      $this->validateEmail($email);
+      $this->validatePassword($password);
+
+      $hashed_password = password_hash($password,PASSWORD_DEFAULT);
+
+      if(empty($this->errorArray)){
+        try{
+          $q = 'SELECT * FROM users WHERE email = ? AND password = ?';
+          $stmt = $this->db->connection->prepare($q);
+          $stmt->execute([$email,$hashed_password]);
+          $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+          if($stmt->rowCount === 0){
+            array_push($this->errorArray,Constants::$userDoesNotExistError);
+            $isAuthenticated = false;
+            return;
+          } else { 
+            $isAuthenticated = true; 
+          }
+        }catch(PDOException $er){
+          echo $er->getMessage();
+          $isAuthenticated = false;
+          return false;
+        }
+      } else {
+        $isAuthenticated = false;
+        return;
+      }
+
+      return $isAuthenticated;
+
     }
 
     private function validateUsername($username){

@@ -66,6 +66,21 @@
               <i class="glyphicon glyphicon-shopping-cart"></i> Cart (4)
             </a>
           </li>
+          <li class="active">
+            <a href="logout.php">
+              <i class="glyphicon glyphicon-log-out"></i> Logout
+            </a>
+          </li>
+          <li class="active">
+            <a href="login.php">
+              <i class="glyphicon glyphicon-log-in"></i> Login
+            </a>
+          </li>
+          <li class="active">
+            <a href="register.php">
+              <i class="glyphicon glyphicon-plus-sign"></i> Register
+            </a>
+          </li>
         </ul>
       </div>
       <!-- /.navbar-collapse -->

@@ -7,4 +7,5 @@
     public static $emptyPasswordError = 'Password field is required';
     public static $emptyConfirmPasswordError = 'Confirm password field is required';
     public static $passwordMismatchError = 'Passwords must match';
+    public static $userDoesNotExistError = 'Password does not match';
   }

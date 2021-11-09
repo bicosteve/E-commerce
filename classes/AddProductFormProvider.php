@@ -1,4 +1,5 @@
 <?php
+  //require_once '../../admin_includes/header.php';
   class AddProductFormProvider{
 
     public function createAddProductForm(){
